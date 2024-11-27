@@ -7,9 +7,12 @@ import About from './About';
 import SignUp from './SignUp';
 import Login from './Login';
 import './NavbarCom.css';
+import Staff from './Staff';
+import AllStaff from './AllStaff';
+import EditStaff from './EditStaff';
 
 const NavbarCom = () => {
-  // Function to open social media links in a new tab
+ 
   const openLink = (url) => {
     window.open(url, '_blank');
   };
@@ -50,6 +53,8 @@ const NavbarCom = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/about" className="about-link">About</Nav.Link>
+              <Nav.Link as={Link} to="/staff" className="staff-link">Staff</Nav.Link>
+              <Nav.Link as={Link} to="/Allstaff" className="Allstaff-link">AllStaff</Nav.Link>
               
             </Nav>
           </Navbar.Collapse>
@@ -60,6 +65,11 @@ const NavbarCom = () => {
       <div className="content-area">
         <Routes>
           <Route path="/about" element={<About />} />
+          <Route path="/staff" element={<Staff />} />
+          <Route path="/allstaff" element={<AllStaff />} />
+          <Route path="/edit-staff/:id" element={<EditStaff />} /> 
+
+
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
          
