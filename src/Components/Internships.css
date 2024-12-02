@@ -1,0 +1,22 @@
+
+.internship-heading {
+    color: #4CAF50; 
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  
+  .company-list {
+    list-style-type: decimal; 
+    padding-left: 20px; 
+    /* text-align: left;  */
+  }
+  
+  .company-list li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    font-weight: normal;
+    /* text-align: left; */
+  }
+  

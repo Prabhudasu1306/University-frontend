@@ -40,7 +40,7 @@ const Undergraduate = () => {
         <thead>
           <tr>
             <th>SNO</th>
-            <th>ID</th>
+            
             <th>Course Name</th>
             <th>Duration (Months)</th>
             <th>Actions</th>
@@ -49,19 +49,18 @@ const Undergraduate = () => {
         <tbody>
           {courses.map((course, index) => (
             <tr key={course.id}>
-              <td>{index + 1}</td>
               <td>{course.id}</td>
               <td>{course.name}</td>
               <td>{course.duration}</td>
               <td>
-                {/* Navigate to eligibility details */}
+               
                 <button
                   className="eligibility-link"
                   onClick={() => navigate('/eligible')}
                 >
                   Click Here
                 </button>
-                {/* Navigate to login/register page */}
+                
                 <button
                   className="register-link"
                   onClick={() => navigate('/login')}

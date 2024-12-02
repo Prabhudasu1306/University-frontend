@@ -11,7 +11,6 @@ import Staff from './Staff';
 import AllStaff from './AllStaff';
 import EditStaff from './EditStaff';
 import CoursesOffered from './CoursesOffered';
-// import Faculty from './Faculty';
 import Schools from './Schools';
 import Library from './Library';
 import Feedback from './Feedback';
@@ -22,17 +21,18 @@ import Training from './Training';
 import Internships from './Internships';
 import Certifications from './Certifications';
 import ContactUs from './ContactUs';
-import CoreValues from './CoreValues';  // Import the new components
+import CoreValues from './CoreValues';  
 import Overview from './Overview';
 import FounderChancellor from './FounderChancellor';
 import Chancellor from './Chancellor';
 import Vision from './Vision';
 import NonTeaching from './NonTeaching';
-import AllNonTeaching from './AllNonTeching';
 import AddCourse from './AddCourse';
+import AllNonTeaching from './AllNonTeching'
 import Eligible from './Eligible';
 import Driver from './Driver';
 import AllDriver from './AllDriver';
+import PlacedStudents from './PlacedStudents';
 
 const NavbarCom = () => {
 
@@ -50,7 +50,6 @@ const NavbarCom = () => {
               <Nav.Link as={Link} to="/signup" className="signup-link">SignUp</Nav.Link>
               <Nav.Link as={Link} to="/login" className="login-link">Login</Nav.Link>
               <Nav.Link as={Link} to="/driver" className="driver-link">Driver</Nav.Link>
-              <Nav.Link as={Link} to="/alldriver" className="alldriver-link">AllDrivers</Nav.Link>
             </Nav>
             <Nav className="ms-auto social-links">
               <Nav.Link onClick={() => openLink('https://www.facebook.com')}>
@@ -77,14 +76,9 @@ const NavbarCom = () => {
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/about" className="about-link">About</Nav.Link>
               <Nav.Link as={Link} to="/staff" className="staff-link">Staff</Nav.Link>
-              <Nav.Link as={Link} to="/allstaff" className="Allstaffs-link">AllStaff</Nav.Link>
               <Nav.Link as={Link} to="/nonteaching" className="nonteaching-link">NonTeaching</Nav.Link>
-              <Nav.Link as={Link} to="/allnonteaching" className="allnonteaching-link">AllNonTeaching</Nav.Link>
               <Nav.Link as={Link} to="/addcourse" className="addcourse-link">AddCourse</Nav.Link>
 
-
-              
-              
               <NavDropdown title="Institution Info" id="institution-info-dropdown">
                 <NavDropdown.Item as={Link} to="/core-values">Core Values</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/overview">Overview</NavDropdown.Item>
@@ -95,7 +89,6 @@ const NavbarCom = () => {
 
               <NavDropdown title="Academics" id="academics-dropdown">
                 <NavDropdown.Item as={Link} to="/courses-offered">Courses Offered</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/allstaff">Faculty</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/schools">Colleges</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/library">Library</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/feedback">Feedback</NavDropdown.Item>
@@ -103,11 +96,16 @@ const NavbarCom = () => {
 
               <NavDropdown title="Admission" id="admission-dropdown">
                 <NavDropdown.Item as={Link} to="/undergraduate">Undergraduate</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/postgraduate">Postgraduate</NavDropdown.Item>
+              </NavDropdown>
+
+              <NavDropdown title="Staff" id="staff-dropdown">
+                <NavDropdown.Item as={Link} to="/allstaff">Faculty</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/allnonteaching">NonTeaching</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/alldriver">AllDrivers</NavDropdown.Item>
               </NavDropdown>
 
               <NavDropdown title="Placement" id="placement-dropdown">
-                <NavDropdown.Item as={Link} to="/amountus">AmountUS</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/placedstudents">MyPlacements</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/training">Training</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/internships">Internships</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/certifications">Certifications</NavDropdown.Item>
@@ -122,6 +120,8 @@ const NavbarCom = () => {
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/staff" element={<Staff />} />
+          <Route path="/placedstudents" element={<PlacedStudents/>}/>
+          <Route path="/staff/:department" element={<AllStaff />} />
           <Route path="/allstaff" element={<AllStaff />} />
           <Route path="/edit-staff/:id" element={<EditStaff />} />
           <Route path="/signup" element={<SignUp />} />
@@ -142,12 +142,13 @@ const NavbarCom = () => {
           <Route path="/founder-chancellor" element={<FounderChancellor />} />
           <Route path="/chancellor" element={<Chancellor />} />
           <Route path="/vision-" element={<Vision />} />
-          <Route path="/nonteaching" element={<NonTeaching/>} />
-          <Route path="/allnonteaching" element={<AllNonTeaching/>} />
-          <Route path="/addcourse" element={<AddCourse/>} />
-          <Route path="/eligible" element={<Eligible/>} />
-          <Route path="/driver" element={<Driver/>} />
-          <Route path="/alldriver" element={<AllDriver/>} />
+          <Route path="/nonteaching" element={<NonTeaching />} />
+          <Route path="/allnonteaching" element={<AllNonTeaching />} />
+          <Route path="/addcourse" element={<AddCourse />} />
+          <Route path="/eligible" element={<Eligible />} />
+          <Route path="/driver" element={<Driver />} />
+          <Route path="/alldriver" element={<AllDriver />} />
+          {/*  */}
         </Routes>
       </div>
     </div>

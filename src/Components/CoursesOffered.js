@@ -38,7 +38,7 @@ const CoursesOffered = () => {
         <thead>
           <tr>
             <th>SNO</th>
-            <th>ID</th>
+            
             <th>Course Name</th>
             <th>Duration (Months)</th>
           </tr>
@@ -46,7 +46,7 @@ const CoursesOffered = () => {
         <tbody>
           {courses.map((course, index) => (
             <tr key={course.id}>
-              <td>{index + 1}</td>
+            
               <td>{course.id}</td>
               <td>{course.name}</td>
               <td>{course.duration}</td>

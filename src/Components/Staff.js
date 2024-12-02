@@ -9,6 +9,7 @@ const Staff = () => {
     email: '',
     phoneNumber: '',
     department: '',
+    specialization: '',
     designation: '',
     dateOfJoining: '',
     highestQualification: '',
@@ -25,16 +26,14 @@ const Staff = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/api/teaching-staff/add', staffData);  // No need to store the response
+      await axios.post('http://localhost:8080/api/teaching-staff/add', staffData);
       alert('Staff added successfully!');
-      handleClear(); 
+      handleClear();
     } catch (error) {
       console.error('Error adding staff:', error);
       alert('Error adding staff. Please try again.');
     }
   };
-  
-  
 
   const handleClear = () => {
     setStaffData({
@@ -43,6 +42,7 @@ const Staff = () => {
       email: '',
       phoneNumber: '',
       department: '',
+      specialization: '',
       designation: '',
       dateOfJoining: '',
       highestQualification: '',
@@ -88,6 +88,7 @@ const Staff = () => {
             />
           </div>
         </div>
+
         <div className="staff-row">
           <div className="staff-field">
             <label>Phone Number</label>
@@ -110,6 +111,19 @@ const Staff = () => {
             />
           </div>
           <div className="staff-field">
+            <label>Specialization</label>
+            <input
+              type="text"
+              name="specialization"
+              value={staffData.specialization}
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </div>
+
+        <div className="staff-row">
+          <div className="staff-field">
             <label>Designation</label>
             <input
               type="text"
@@ -119,8 +133,6 @@ const Staff = () => {
               required
             />
           </div>
-        </div>
-        <div className="staff-row">
           <div className="staff-field">
             <label>Date of Joining</label>
             <input
@@ -141,6 +153,9 @@ const Staff = () => {
               required
             />
           </div>
+        </div>
+
+        <div className="staff-row">
           <div className="staff-field">
             <label>Experience (Years)</label>
             <input
@@ -151,8 +166,6 @@ const Staff = () => {
               required
             />
           </div>
-        </div>
-        <div className="staff-row">
           <div className="staff-field">
             <label>Salary</label>
             <input
@@ -163,8 +176,8 @@ const Staff = () => {
               required
             />
           </div>
-      
         </div>
+
         <div className="staff-buttons">
           <button type="submit" className="submit-button">
             Submit
